@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titanic Survival Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-icon">⚓</span><span><b>Titanic Predictor</b><small>Predict who survived</small></span></a>
+      <nav>
+        <a class="active" href="#home">⌂ <span>Dashboard</span></a>
+        <a href="#predict">⌁ <span>Make a prediction</span></a>
+        <a href="#about">ⓘ <span>About the project</span></a>
+      </nav>
+      <div class="ship-art"><span>RMS</span><strong>TITANIC</strong><i>〰 〰 〰</i></div>
+      <p class="sidebar-quote">“A small prediction can tell a story from history.”</p>
+      <div class="sidebar-foot">MACHINE LEARNING PROJECT<br><span>HTML · CSS · JavaScript</span></div>
+    </aside>
+
+    <main class="main" id="home">
+      <header class="topbar"><div><span class="eyebrow">MACHINE LEARNING · CLASSIFICATION</span><h1>Titanic Survival Prediction</h1><p>Explore passenger details and estimate survival probability.</p></div><div class="avatar">TP</div></header>
+      <section class="hero">
+        <div><span class="pill">THE RMS TITANIC · 1912</span><h2>Every passenger has a story.</h2><p>Enter the passenger information to see the model-style prediction.</p></div>
+        <div class="hero-ship" aria-hidden="true">🚢</div>
+      </section>
+
+      <section class="content-grid" id="predict">
+        <div class="panel form-panel">
+          <div class="panel-heading"><div><span class="section-icon">✦</span><h2>Passenger details</h2></div><span class="muted">Required fields marked *</span></div>
+          <form id="passengerForm">
+            <div class="fields">
+              <label>Passenger class *<select id="pclass" required><option value="1">1st Class</option><option value="2" selected>2nd Class</option><option value="3">3rd Class</option></select></label>
+              <label>Sex *<select id="sex" required><option value="female">Female</option><option value="male" selected>Male</option></select></label>
+              <label>Age *<input id="age" type="number" min="0" max="100" value="30" required></label>
+              <label>Fare (£) *<input id="fare" type="number" min="0" step="0.01" value="25" required></label>
+              <label>Siblings / spouses aboard<input id="sibsp" type="number" min="0" max="20" value="0"></label>
+              <label>Parents / children aboard<input id="parch" type="number" min="0" max="20" value="0"></label>
+              <label class="full">Port of embarkation<select id="embarked"><option value="S">Southampton (S)</option><option value="C">Cherbourg (C)</option><option value="Q">Queenstown (Q)</option></select></label>
+            </div>
+            <button type="submit" class="predict-btn"><span>✧</span> Predict survival <span class="arrow">→</span></button>
+            <p class="disclaimer">Demo interface only: connect your trained Python model for real predictions.</p>
+          </form>
+        </div>
+
+        <div class="right-column">
+          <div class="result-card" id="resultCard" aria-live="polite">
+            <div class="result-top"><span class="result-symbol" id="resultSymbol">?</span><div><span class="eyebrow">PREDICTION RESULT</span><h2 id="resultTitle">Ready to predict</h2></div></div>
+            <p id="resultText">Fill in the passenger details, then select <b>Predict survival</b>.</p>
+            <div class="confidence"><div><span>Demo score</span><b id="scoreText">—</b></div><div class="progress"><span id="progressBar"></span></div></div>
+          </div>
+          <div class="panel summary">
+            <div class="panel-heading"><div><span class="section-icon">◎</span><h2>Passenger summary</h2></div></div>
+            <div class="summary-row"><span>Class</span><b id="sumClass">2nd Class</b></div>
+            <div class="summary-row"><span>Sex</span><b id="sumSex">Male</b></div>
+            <div class="summary-row"><span>Age</span><b id="sumAge">30 years</b></div>
+            <div class="summary-row"><span>Fare</span><b id="sumFare">£25.00</b></div>
+            <div class="summary-row"><span>Family aboard</span><b id="sumFamily">0</b></div>
+            <div class="summary-row"><span>Embarked</span><b id="sumPort">Southampton</b></div>
+          </div>
+          <div class="mini-note" id="about"><span>ⓘ</span><div><b>About this project</b><p>The UI is built with HTML, CSS and JavaScript. A trained model must be connected for actual ML predictions.</p></div></div>
+        </div>
+      </section>
+      <section class="stats">
+        <div><span class="stat-icon">⚡</span><span><b>Quick input</b><small>Simple passenger form</small></span></div>
+        <div><span class="stat-icon">◈</span><span><b>ML-ready</b><small>Connect your model API</small></span></div>
+        <div><span class="stat-icon">▥</span><span><b>Responsive</b><small>Desktop and mobile</small></span></div>
+        <div><span class="stat-icon">♡</span><span><b>Portfolio project</b><small>Clean modern UI</small></span></div>
+      </section>
+      <footer>Built for a Titanic Machine Learning project <span>·</span> Frontend demo</footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
